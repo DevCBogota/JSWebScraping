@@ -1,11 +1,15 @@
 {
-  "name": "testpuppeteer",
+  "name": "jswebscrapper",
   "version": "1.0.0",
-  "description": "scraping with js",
+  "description": "A web scrapper made with JavaScript",
   "main": "scraper.js",
   "scripts": {
+    "start": "echo \"\n\n ######################################## \n Demostración de un scrapping simple: \n\" && node ./basicscraper.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.5.0"
+  }
 }
