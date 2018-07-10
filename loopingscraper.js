@@ -8,12 +8,12 @@ let scrape = async () => {
     await page.goto('http://books.toscrape.com/');
     const result = await page.evaluate(() => {
 
-        let data = [];
-        let elements = document.querySelectorAll('.product_pod');
+        const data = [];
+        const elements = document.querySelectorAll('.product_pod');
 
-        for (var element of elements){
-            let title = element.childNodes[5].innerText;
-            let price = element.childNodes[7].children[0].innerText;
+        for (let element of elements){
+            const title = element.childNodes[5].innerText;
+            const price = element.childNodes[7].children[0].innerText;
 
             data.push({title, price});
         }
