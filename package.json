@@ -1,10 +1,13 @@
 {
-  "name": "jswebscrapper",
+  "name": "jswebscraper",
   "version": "1.0.0",
-  "description": "A web scrapper made with JavaScript",
+  "description": "A web scraper made with JavaScript",
   "main": "scraper.js",
   "scripts": {
-    "start": "echo \"\n\n ######################################## \n Demostración de un scrapping simple: \n\" && node ./basicscraper.js",
+    "start": "echo \"\n\n######################################## \n Demostración de un scraping simple: \n########################################\" && node ./basico/index.js",
+    "basico": "echo \"\n\n######################################## \n Demostración de un scraping simple: \n########################################\" && node ./basico/index.js",
+    "ciclo": "echo \"\n\n######################################## \n Demostración de un scraping con ciclos: \n########################################\" && node ./ciclo/index.js",
+    "screenshot": "echo \"\n\n######################################## \n Demostración de un scraping tomando screensots: \n########################################\" && node ./screenshot/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
