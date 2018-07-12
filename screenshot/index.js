@@ -7,7 +7,7 @@ async function getPic() {
   const uniqueIdentifier = Date.now();
   
   await page.goto('https://google.com');
-  await page.screenshot({path: path.join(__dirname, `/screenshots/google_${uniqueIdentifier}.png`)});
+  await page.screenshot({path: path.join(__dirname, `/_screenshots/google_${uniqueIdentifier}.png`)});
 
   await browser.close();
 }
