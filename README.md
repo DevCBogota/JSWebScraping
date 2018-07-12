@@ -18,5 +18,8 @@ Existen 3 ejemplos:
 - [`ciclo`](./ciclo/README.md): `npm run ciclo`
 - [`screenshot`](./screenshot/README.md): `npm run screenshot`
 
-https://drive.google.com/open?id=1ZKqmJyyE1_EA9BCR6HLMPv9yPefu90aGggdpYGJR6gI
+
+### Presentación relacionada
+
+> https://drive.google.com/open?id=1ZKqmJyyE1_EA9BCR6HLMPv9yPefu90aGggdpYGJR6gI
 
