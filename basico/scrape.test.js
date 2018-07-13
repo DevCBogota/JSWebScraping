@@ -1,6 +1,6 @@
 const scrape = require('./scrape');
 
-describe('Basico tests', () => {
+describe('Scrape basico tests', () => {
   test('Scrape should be truthy', () => {
     expect(scrape).toBeTruthy();
   });
@@ -23,9 +23,9 @@ describe('Basico tests', () => {
     const result = await scrape(targetURL, elementToClick, evaluateFunction);
 
     expect(result).toEqual(expectedResult);
-  });
+  }, 20000);
 
-  test('Mock pass invalid URl should fail', async () => {
+  test('Pass invalid URL in scrap should fail', async () => {
     const targetURL = 'asdasd';
 
     let error;
@@ -34,10 +34,12 @@ describe('Basico tests', () => {
     } catch (e) {
       error = e;
     }
-    expect(error).toEqual(new Error('Protocol error (Page.navigate): Cannot navigate to invalid URL undefined'));
-  });
 
-  test('Mock pass invalid elementToClick should fail', async () => {
+    const expectedError = new Error('Protocol error (Page.navigate): Cannot navigate to invalid URL');
+    expect(error).toEqual(expectedError);
+  }, 20000);
+
+  test('Pass invalid elementToClick in scrap should fail', async () => {
     const targetURL = 'http://books.toscrape.com/';
 
     const elementToClick = '#asdasdasd';
@@ -49,10 +51,11 @@ describe('Basico tests', () => {
       error = e;
     }
 
-    expect(error).toEqual(new Error(`No node found for selector: ${elementToClick}`));
-  });
+    const expectedError = new Error(`No node found for selector: ${elementToClick}`);
+    expect(error).toEqual(expectedError);
+  }, 20000);
 
-  test('Scrape a valid page, should execute evaluateFunction', async () => {
+  test('Scrape a valid page should execute a function', async () => {
     const targetURL = 'http://books.toscrape.com/';
 
     const elementToClick = '#default > div > div > div > div > section > div:nth-child(2) > ol > li:nth-child(1) > article > div.image_container > a > img';
@@ -62,5 +65,5 @@ describe('Basico tests', () => {
     const expectedResult = 2;
 
     expect(result).toBe(expectedResult);
-  });
+  }, 20000);
 });

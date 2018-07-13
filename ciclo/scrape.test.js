@@ -1,6 +1,6 @@
 const scrape = require('./scrape');
 
-describe('Ciclo tests', () => {
+describe('Scrape ciclo tests', () => {
   test('Scrape should be truthy', () => {
     expect(scrape).toBeTruthy();
   });
@@ -33,9 +33,9 @@ describe('Ciclo tests', () => {
     const result = await scrape(targetURL, elementToClick, evaluateFunction);
 
     expect(result).toEqual(expectedResult);
-  });
+  }, 20000);
 
-  test('Mock pass invalid URl should fail', async () => {
+  test('Pass invalid URL in scrape should fail', async () => {
     const targetURL = 'asdasd';
 
     let error;
@@ -44,10 +44,12 @@ describe('Ciclo tests', () => {
     } catch (e) {
       error = e;
     }
-    expect(error).toEqual(new Error('Protocol error (Page.navigate): Cannot navigate to invalid URL undefined'));
-  });
 
-  test('Mock pass invalid elementsSelector should fail', async () => {
+    const expectedError = new Error('Protocol error (Page.navigate): Cannot navigate to invalid URL');
+    expect(error).toEqual(expectedError);
+  }, 20000);
+
+  test('Pass invalid elementsSelector in scrape should fail', async () => {
     const targetURL = 'http://books.toscrape.com/';
 
     const elementsSelector = '.asdasdasd';
@@ -59,10 +61,11 @@ describe('Ciclo tests', () => {
       error = e;
     }
 
-    expect(error).toEqual(new Error("Cannot read property 'toString' of undefined"));
-  });
+    const expectedError = new Error('The following is not a function: undefined');
+    expect(error).toEqual(expectedError);
+  }, 20000);
 
-  test('Scrape a valid page, should execute evaluateFunction', async () => {
+  test('Scrape a valid page should execute a function', async () => {
     const targetURL = 'http://books.toscrape.com/';
 
     const elementsSelector = '.product_pod';
@@ -72,5 +75,5 @@ describe('Ciclo tests', () => {
     const expectedResult = 2;
 
     expect(result).toBe(expectedResult);
-  });
+  }, 20000);
 });
