@@ -1,13 +1,12 @@
 const puppeteer = require('puppeteer');
-const path = require('path');
 
-const getPic = async () => {
+const getPic = async (targetURL, filePath) => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  const uniqueIdentifier = Date.now();
 
-  await page.goto('https://google.com');
-  await page.screenshot({ path: path.join(__dirname, `/_screenshots/google_${uniqueIdentifier}.png`) });
+  await page.goto(targetURL);
+  await page.waitFor(1000);
+  await page.screenshot({ path: filePath });
 
   await browser.close();
   return true;
