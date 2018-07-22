@@ -1,15 +1,9 @@
-const puppeteer = require('puppeteer');
+const getPic = require('./getPic');
 const path = require('path');
 
-async function getPic() {
-  const browser = await puppeteer.launch({headless: false});
-  const page = await browser.newPage();
-  const uniqueIdentifier = Date.now();
-  
-  await page.goto('https://google.com');
-  await page.screenshot({path: path.join(__dirname, `/_screenshots/google_${uniqueIdentifier}.png`)});
+const targetURL = 'https://google.com';
 
-  await browser.close();
-}
+const uniqueIdentifier = Date.now();
+const screenshotsPath = path.join(__dirname, `/_screenshots/google_${uniqueIdentifier}.png`);
 
-getPic();
+getPic(targetURL, screenshotsPath);
