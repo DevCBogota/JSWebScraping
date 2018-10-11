@@ -8,7 +8,7 @@
     "basico": "echo \"\n\n######################################## \n Demostración de un scraping simple: \n########################################\" && node ./basico/index.js",
     "ciclo": "echo \"\n\n######################################## \n Demostración de un scraping con ciclos: \n########################################\" && node ./ciclo/index.js",
     "screenshot": "echo \"\n\n######################################## \n Demostración de un scraping tomando screensots: \n########################################\" && node ./screenshot/index.js",
-    "test": "NODE_ENV=test npm run lint && jest --config ./jest.config.js --no-cache",
+    "test": "NODE_ENV=test npm run lint && jest --config ./jest.config.js --no-cache  --forceExit --detectOpenHandles",
     "lint": "eslint **/*.js"
   },
   "author": "",

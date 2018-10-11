@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/gerlis18/JSWebScraping/tree/master.svg?style=svg)](https://circleci.com/gh/gerlis18/JSWebScraping/tree/master)
+
+
 # Un ejemplo de web scraping usando JavaScript (Node)
 
 ## ¿Qué es esto?
