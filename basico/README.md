@@ -3,4 +3,4 @@
 `npm i
 node index.js`
 ## Cómo funciona
-Llama a `scrape.js`, que ejecuta un click en el elemento que le llega por parámetro.
+Llama a `scrape.js`, ejecuta un click en el elemento que le llega por parámetro.
